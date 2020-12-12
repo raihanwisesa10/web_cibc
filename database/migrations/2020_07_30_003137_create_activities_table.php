@@ -16,11 +16,11 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->increments('id_pemain');
             $table->string('nama', 30);
-            $table->string('point', 1000);
-            $table->string('assist', 1000);
-            $table->string('steal', 1000);
-            $table->string('block', 1000);
-            $table->string('rebound', 1000);
+            $table->integer('point', 1000);
+            $table->integer('assist', 1000);
+            $table->integer('steal', 1000);
+            $table->integer('block', 1000);
+            $table->integer('rebound', 1000);
             $table->timestamps();
         });
     }

@@ -24,7 +24,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.tambahdata_profil');
     }
 
     /**
@@ -35,7 +35,20 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'umur' => 'required',
+            'tinggi' => 'required',
+            'berat' => 'required',
+            'posisi' => 'required',
+            'tanggal_lahir' => 'required',
+            'no_punggung' => 'required',
+            'tanggal_lahir' => 'required',
+            'gambar_pemain' => 'required'
+        ]);
+
+        Profile::create($request->all());
+        return redirect('/dashboard/profile')->with('status', 'Data Pemain Berhasil Ditambahkan!');
     }
 
     /**

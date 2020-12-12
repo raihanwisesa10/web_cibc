@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('home');
 });
 
-Auth::routes();
+
 
 Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
 
@@ -36,8 +38,20 @@ Route::get('/profiles', 'PlayersController@profiles')->name('profiles');
 
 Route::get('/about', 'PlayersController@about')->name('about');
 
+Route::get('dashboard/profile/create', 'ProfileController@create');
+
 Route::get('dashboard/activity/create', 'ActivityController@create');
 
-Route::get('dashboard/activity/{id}/edit', 'ActivityController@edit');
+Route::get('dashboard/activity/{id_pemain}/edit', 'ActivityController@edit');
 
-Route::get('dashboard/activity/{id}/delete', 'ActivityController@destroy');
+Route::get('dashboard/activity/{id_pemain}/delete', 'ActivityController@delete');
+
+Route::get('delete/{id_pemain}', 'ActivityController@delete');
+
+Route::get('edit/{id_pemain}', 'ActivityController@edit');
+
+Route::post('update/{id_pemain}', 'ActivityController@update');
+
+Route::get('back', 'ActivityController@back');
+
+// Route::resource('activities', ActivityController::class);

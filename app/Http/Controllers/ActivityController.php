@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use \App\Activity;
 
 class ActivityController extends Controller
@@ -42,7 +43,7 @@ class ActivityController extends Controller
             'assist' => 'required',
             'steal' => 'required',
             'block' => 'required',
-            'reboundss' => 'required'
+            'rebound' => 'required'
         ]);
 
         Activity::create($request->all());
@@ -55,7 +56,7 @@ class ActivityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_pemain)
     {
         //
     }
@@ -66,34 +67,34 @@ class ActivityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_pemain)
     {
-        return view('dashboard.ubahdata_pemain');
+        $activity = Activity::find($id_pemain);
+        return view('dashboard.ubahdata_pemain', compact('activity'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_pemain)
     {
-        //
+        $activity = Activity::findOrFail($id_pemain);
+        $activity->nama = $request->get('nama');
+        $activity->point = $request->get('point');
+        $activity->assist = $request->get('assist');
+        $activity->steal = $request->get('steal');
+        $activity->block = $request->get('block');
+        $activity->rebound = $request->get('rebound');
+        $activity->save();
+        return redirect('/dashboard/activity')->with('status', 'Data berhasil Diubah.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function back()
     {
-        // Activity::destroy($id);
-        // return redirect('/dashboard/activity')->with('status', 'Data Pemain Berhasil Dihapus!');
-        // $act->delete($activity);
-        // return redirect('/dashboard/activity')->with('suskes', 'data berhasil dihapus');
+        return redirect('/');
+    }
+
+    public function delete($id_pemain)
+    {
+        $activity = Activity::find($id_pemain);
+        $activity->delete();
+        return redirect('/dashboard/activity')->with('status', 'Data berhasil Dihapus.');
     }
 }

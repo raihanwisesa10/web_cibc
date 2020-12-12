@@ -2,10 +2,9 @@
 
 @section('content')
 
-<div class="container">
-
+<div class="container mt-4" style="margin-bottom: 111px;">
     <h3 class="text-center">Tabel Aktivitas Pemain</h3>
-    <table class="table table-hover mt-3">
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                 <th scope="col">No</th>
