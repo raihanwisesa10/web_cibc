@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use App\Profile;
 
 class ProfileController extends Controller
@@ -14,7 +15,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('dashboard.profile');
+        global $profile;
+
+        $profiles = Profile::all();
+        return view(('dashboard.profile'), compact('profiles'));
     }
 
     /**
@@ -42,9 +46,8 @@ class ProfileController extends Controller
             'berat' => 'required',
             'posisi' => 'required',
             'tanggal_lahir' => 'required',
-            'no_punggung' => 'required',
-            'tanggal_lahir' => 'required',
-            'gambar_pemain' => 'required'
+            'nomor_punggung' => 'required',
+            'foto' => 'required'
         ]);
 
         Profile::create($request->all());

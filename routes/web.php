@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('home');
+    return view('home')->with('foto', '1_122220_ava.png');
 });
 
 
@@ -27,6 +27,8 @@ Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
 Route::get('/dashboard/activity', 'ActivityController@index')->name('dashboard_activity');
 
 Route::post('/dashboard/activity', 'ActivityController@store');
+
+Route::post('/dashboard/profile', 'ProfileController@store')->name('profile.store');
 
 Route::get('/dashboard/profile', 'ProfileController@index')->name('dashboard_profile');
 
@@ -54,4 +56,4 @@ Route::post('update/{id_pemain}', 'ActivityController@update');
 
 Route::get('back', 'ActivityController@back');
 
-// Route::resource('activities', ActivityController::class);
+// Route::resource('activity', 'ActivityController');

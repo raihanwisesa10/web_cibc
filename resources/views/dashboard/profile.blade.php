@@ -23,9 +23,28 @@
                     <th scope="col">Berat</th>
                     <th scope="col">Posisi</th>
                     <th scope="col">Tanggal_Lahir</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
+            <tbody>
+                @foreach ($profiles as $profile)
+                <tr>
+                    <td>{{$profile->nama}}</td>
+                    <td>{{$profile->umur}}</td>
+                    <td>{{$profile->tinggi}}</td>
+                    <td>{{$profile->berat}}</td>
+                    <td>{{$profile->posisi}}</td>
+                    <td>{{$profile->tanggal_lahir}}</td>
+                    <td><img src="{{ asset('uploads/profiles/'.$profile->foto) }}" alt="Image" width="200px" height="auto" /></td>
+                    <td>
+                        <a class="btn btn-danger" href="{{url('delete',array($profile->id_pemain))}}">Delete</a>
+                        <a class="btn btn-warning" href="{{url('edit',array($profile->id_pemain))}}">Edit</a>
+
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
         </table>
     </div>
 

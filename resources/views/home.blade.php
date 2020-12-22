@@ -85,6 +85,8 @@
     </div>
 </div>
 
+<img src="{{ asset('uploads/profiles/'.$foto) }}" alt="Image" />
+
 </div>
 <!-- /.row -->
 @endsection
