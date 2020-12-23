@@ -16,15 +16,4 @@ class DashboardController extends Controller
     {
         return view('dashboard.dashboard');
     }
-
-    // public function activity()
-    // {
-    //     $activity = Activity::all();
-    //     return view('dashboard.activity', ['activity' => $activity]);
-    // }
-
-    // public function profile()
-    // {
-    //     return view('dashboard.profile');
-    // }
 }

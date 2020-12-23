@@ -76,8 +76,8 @@
             <!-- <div class="col-12"> -->
             <div class="row">
                 <div class="col-4 float-left">
-                    <img src="{{ asset('uploads/profiles/'.$foto) }}" alt="Image" />
-                    <!-- <img src="{{url('img/1-min.jpg')}}" style="width: 450px; height: 450px;"> -->
+
+                    <img src="#" style="width: 450px; height: 450px;">
                 </div>
                 <div class="col-8 bg-danger">
                     AAAAAAAAAA

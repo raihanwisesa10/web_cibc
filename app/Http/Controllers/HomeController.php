@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Activity;
 
 class HomeController extends Controller
 {
@@ -14,6 +15,22 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function activity()
+    {
+        $activity = Activity::all();
+        return view('activity', ['activity' => $activity]);
+    }
+
+    public function profiles()
+    {
+        return view('profiles');
+    }
+
+    public function about()
+    {
+        return view('about');
     }
 
     /**

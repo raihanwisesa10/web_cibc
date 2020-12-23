@@ -6,14 +6,9 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Profile Pemain</h1>
-    </div>
-
     <div class="container">
         <h3 class="text-center">Tabel Aktivitas Pemain</h3>
-        <a href="{{url('dashboard/profile/create')}}" class="btn btn-success mb-1">Tambah Data Pemain</a>
+        <a href="{{route('profile.create')}}" class="btn btn-success mb-1">Tambah Data Pemain</a>
         <table class="table table-hover mt-3">
             <thead>
                 <tr>
@@ -40,7 +35,8 @@
                     <td>
                         <a class="btn btn-danger" href="{{url('delete',array($profile->id_pemain))}}">Delete</a>
                         <a class="btn btn-warning" href="{{url('edit',array($profile->id_pemain))}}">Edit</a>
-
+                        <!-- <a class="btn btn-danger" href="{{route('profile.destroy'), $profile->id_pemain}}">Delete</a>
+                        <a class="btn btn-warning" href="{{route('profile.edit'), $profile->id_pemain}}">Edit</a> -->
                     </td>
                 </tr>
                 @endforeach

@@ -50,8 +50,14 @@ class ProfileController extends Controller
             'foto' => 'required'
         ]);
 
+        $foto = $request->file('foto');
+
+        $new_name = rand() . '.' . $foto->getClientOriginalExtension();
+
+        $foto->move(public_path('uploads'), $new_name);
+
         Profile::create($request->all());
-        return redirect('/dashboard/profile')->with('status', 'Data Pemain Berhasil Ditambahkan!');
+        return redirect('profile')->with('status', 'Data Pemain Berhasil Ditambahkan!');
     }
 
     /**
@@ -71,9 +77,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_pemain)
     {
-        //
+        $profiles = Profile::find($id_pemain);
+        return view('dashboard.ubahdata_profil', compact('profiles'));
     }
 
     /**
@@ -83,7 +90,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_pemain)
     {
         //
     }
@@ -94,8 +101,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_pemain)
     {
-        //
+        $profiles = Profile::find($id_pemain);
+        $profiles->delete();
+        return redirect('/dashboard/profile')->with('status', 'Data berhasil Dihapus.');
     }
 }

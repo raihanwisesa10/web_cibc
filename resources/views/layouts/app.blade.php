@@ -48,13 +48,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/activity') }}">Activity</a>
+                        <a class="nav-link" href="{{ route('activities') }}">Activity</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/profiles') }}">Profiles</a>
+                        <a class="nav-link" href="{{route('profiles') }}">Profiles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/about') }}">About</a>
+                        <a class="nav-link" href="{{ route('about') }}">About</a>
                     </li>
                 </ul>
             </div>
