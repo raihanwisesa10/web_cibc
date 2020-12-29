@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('home')->with('foto', '1_122220_ava.png');
-});
+    return view('home');
+})->name('home');
 
 
 
@@ -36,9 +36,11 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/activities', 'HomeController@activity')->name('activities');
 
-Route::get('/profiles', 'HomeController@profiles')->name('profiles');
+Route::get('/players', 'HomeController@players')->name('players');
 
 Route::get('/about', 'HomeController@about')->name('about');
+
+Route::get('/player', 'HomeController@player')->name('player');
 
 // Route::resource('home', HomeController::class);
 
@@ -54,17 +56,17 @@ Route::get('/about', 'HomeController@about')->name('about');
 
 // Route::get('dashboard/activity/{id_pemain}/delete', 'ActivityController@delete');
 
-Route::get('activity/delete/{id_pemain}', 'ActivityController@delete');
+// Route::get('activity/delete/{id_pemain}', 'ActivityController@delete');
 
-Route::get('activity/edit/{id_pemain}', 'ActivityController@edit');
+// Route::get('activity/edit/{id_pemain}', 'ActivityController@edit');
 
-Route::post('activity/update/{id_pemain}', 'ActivityController@update');
+// Route::post('activity/update/{id_pemain}', 'ActivityController@update');
 
-Route::get('delete/{id_pemain}', 'ProfileController@delete');
+// Route::get('delete/{id_pemain}', 'ProfileController@delete');
 
-Route::get('edit/{id_pemain}', 'ProfileController@edit');
+// Route::get('edit/{id_pemain}', 'ProfileController@edit');
 
-Route::post('update/{id_pemain}', 'ProfileController@update');
+// Route::post('update/{id_pemain}', 'ProfileController@update');
 
 // Route::get('back', 'ActivityController@back');
 

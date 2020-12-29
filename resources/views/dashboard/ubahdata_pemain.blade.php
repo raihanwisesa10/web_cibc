@@ -4,12 +4,10 @@
 <body id="page-top">
     <!-- Begin Page Content -->
     <div class="container-fluid">
-
         <h3>Form Ubah Data Aktivitas Pemain</h3>
         <!-- Content Row -->
         <form method="POST" action="{{url('update', $activity->id_pemain)}}">
             @csrf
-            <!-- <input type="hidden" name="id" id="id" value="{{$activity->id_pemain}}"> -->
             <div class="form-group">
                 <label for="nama">Nama</label>
                 <input value="{{$activity->nama}}" type="text" class="form-control" id="nama" placeholder="Masukkan Nama Pemain" name="nama">
@@ -36,6 +34,7 @@
             </div>
             <div class="row">
                 <button class="btn btn-success" type="submit">Ubah Data Pemain</button>
+                <a href="{{route('activity.index')}}">Kembali</a>
             </div>
 
         </form>

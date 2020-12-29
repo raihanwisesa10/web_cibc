@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use \App\Activity;
+use \App\Profile;
 
 class ActivityController extends Controller
 {
@@ -13,10 +14,19 @@ class ActivityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $activity = Activity::all();
-        return view('dashboard.activity', compact('activity'));
+        $data = Profile::GetProfile();
+        // $profiles = Profile::findOrFail($activity['id_pemain']);
+        // dd($profile);
+        // die();
+        return view('dashboard.activity', compact('data'));
     }
 
     /**
@@ -91,10 +101,10 @@ class ActivityController extends Controller
         return redirect('/');
     }
 
-    public function delete($id_pemain)
+    public function destroy($id_pemain)
     {
         $activity = Activity::find($id_pemain);
         $activity->delete();
-        return redirect('/dashboard/activity')->with('status', 'Data berhasil Dihapus.');
+        return redirect('activity')->with('status', 'Data berhasil Dihapus.');
     }
 }

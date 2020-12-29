@@ -12,10 +12,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     public function activity()
     {
@@ -23,14 +23,19 @@ class HomeController extends Controller
         return view('activity', ['activity' => $activity]);
     }
 
-    public function profiles()
+    public function players()
     {
-        return view('profiles');
+        return view('players');
     }
 
     public function about()
     {
         return view('about');
+    }
+
+    public function player()
+    {
+        return view('player');
     }
 
     /**

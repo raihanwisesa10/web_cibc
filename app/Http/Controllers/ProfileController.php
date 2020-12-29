@@ -13,6 +13,11 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         global $profile;
@@ -52,11 +57,22 @@ class ProfileController extends Controller
 
         $foto = $request->file('foto');
 
-        $new_name = rand() . '.' . $foto->getClientOriginalExtension();
+        $new_name = rand() . '_' . $foto
+            ->getClientOriginalName();
 
-        $foto->move(public_path('uploads'), $new_name);
+        $foto->move(public_path('upload/profiles'), $new_name);
+        $form_data = array(
+            'nama' => $request->nama,
+            'umur' => $request->umur,
+            'tinggi' => $request->tinggi,
+            'berat' => $request->berat,
+            'posisi' => $request->posisi,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'nomor_punggung' => $request->nomor_punggung,
+            'foto' => $new_name
+        );
 
-        Profile::create($request->all());
+        Profile::create($form_data);
         return redirect('profile')->with('status', 'Data Pemain Berhasil Ditambahkan!');
     }
 
@@ -79,7 +95,7 @@ class ProfileController extends Controller
      */
     public function edit($id_pemain)
     {
-        $profiles = Profile::find($id_pemain);
+        $profiles = Profile::findOrFail($id_pemain);
         return view('dashboard.ubahdata_profil', compact('profiles'));
     }
 
@@ -92,7 +108,51 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id_pemain)
     {
-        //
+        $foto_name = $request->hidden_image;
+
+        $foto = $request->file('foto');
+        if ($foto != '') {
+            $request->validate(
+                [
+                    'nama' => 'required',
+                    'umur' => 'required',
+                    'tinggi' => 'required',
+                    'berat' => 'required',
+                    'posisi' => 'required',
+                    'tanggal_lahir' => 'required',
+                    'nomor_punggung' => 'required',
+                    'foto' => 'image'
+                ]
+            );
+            $foto_name = rand() . '_' . $foto
+                ->getClientOriginalName();
+            $foto->move(public_path('upload/profiles'), $foto_name);
+        } else {
+
+            $request->validate([
+                'nama' => 'required',
+                'umur' => 'required',
+                'tinggi' => 'required',
+                'berat' => 'required',
+                'posisi' => 'required',
+                'tanggal_lahir' => 'required',
+                'nomor_punggung' => 'required',
+            ]);
+        }
+        $form_data = array(
+            'nama' => $request->nama,
+            'umur' => $request->umur,
+            'tinggi' => $request->tinggi,
+            'berat' => $request->berat,
+            'posisi' => $request->posisi,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'nomor_punggung' => $request->nomor_punggung,
+            'foto' => $foto_name
+        );
+        // dd($form_data);
+        // die();
+        Profile::where('id_pemain', '=',  $id_pemain)->update($form_data);
+        return redirect('profile')->with('status', 'Data berhasil Diubah.');
     }
 
     /**
@@ -105,6 +165,6 @@ class ProfileController extends Controller
     {
         $profiles = Profile::find($id_pemain);
         $profiles->delete();
-        return redirect('/dashboard/profile')->with('status', 'Data berhasil Dihapus.');
+        return redirect('profile')->with('status', 'Data berhasil Dihapus.');
     }
 }

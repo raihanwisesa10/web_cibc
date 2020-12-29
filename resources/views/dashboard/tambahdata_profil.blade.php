@@ -3,59 +3,76 @@
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
     <h3>Form Tambah Data Pemain</h3>
     <!-- Content Row -->
-    <form method="POST" action="#" class="col-md-6">
+    <form method="POST" action="{{route('profile.store')}}" class="col-md-6" enctype="multipart/form-data">
         @csrf
-        <div class="form-group">
-            <label for="formGroupExampleInput">Nama</label>
-            <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap" required>
+        <div class=" form-group">
+            <label for="nama">Nama</label>
+            <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="Masukkan Nama Lengkap">
+            @error('nama')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
-            <label for="formGroupExampleInput2">Umur</label>
-            <input type="text" class="form-control" id="umur" name="umur" placeholder="Masukkan Umur">
+            <label for="umur">Umur</label>
+            <input type="text" class="form-control @error('umur') is-invalid @enderror" id="umur" name="umur" placeholder="Masukkan Umur">
+            @error('umur')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
-            <label for="formGroupExampleInput">Tinggi Badan</label>
-            <input type="text" class="form-control" id="tinggi" name="tinggi" placeholder="Masukkan Tinggi Badan">
+            <label for="tinggi">Tinggi Badan</label>
+            <input type="text" class="form-control @error('tinggi') is-invalid @enderror" id="tinggi" name="tinggi" placeholder="Masukkan Tinggi Badan">
+            @error('tinggi')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
-            <label for="formGroupExampleInput">Berat Badan</label>
-            <input type="text" class="form-control" id="berat" name="berat" placeholder="Masukkan Berat Badan">
+            <label for="berat">Berat Badan</label>
+            <input type="text" class="form-control @error('berat') is-invalid @enderror" id="berat" name="berat" placeholder="Masukkan Berat Badan">
+            @error('berat')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">Posisi</label>
-            <select class="form-control" id="posisi" name="posisi">
-                <option>Point Guard</option>
-                <option>Shooting Guard</option>
-                <option>Small Forward</option>
-                <option>Power Forward</option>
-                <option>Center</option>
+            <label for="posisi">Posisi</label>
+            <select class="form-control @error('posisi') is-invalid @enderror" id="posisi" name="posisi">
+                <option value="Point Guard">Point Guard</option>
+                <option value="Shooting Guard">Shooting Guard</option>
+                <option value="Small Guard">Small Forward</option>
+                <option value="Power Guard">Power Forward</option>
+                <option value="Center">Center</option>
             </select>
+            @error('posisi')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
-            <!-- <label for="formGroupExampleInput">Tanggal Lahir</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Tanggal Lahir"> -->
             <label for="datepicker">Tanggal Lahir</label>
-            <input type="date" id="datepicker" name="tanggal_lahir" class="form-control">
+            <input type="date" id="datepicker" name="tanggal_lahir" class="form-control @error('tanggal_lahir') is-invalid @enderror">
+            @error('tanggal_lahir')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
-            <label for="formGroupExampleInput">No.Punggung</label>
-            <input type="text" class="form-control" id="nomor_punggung" name="nomor_punggung" placeholder="Masukkan No.Punggung">
+            <label for="nomor_punggung">No.Punggung</label>
+            <input type="text" class="form-control @error('nomor_punggung') is-invalid @enderror" id="nomor_punggung" name="nomor_punggung" placeholder="Masukkan No.Punggung">
+            @error('nomor_punggung')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
             <label for="foto">Foto Pemain</label>
-            <input type="file" accept=".png,.jpg,.jpeg" name="foto" id="foto" class="form-control">
+            <input type="file" accept=".png,.jpg,.jpeg" name="foto" id="foto" class="form-control @error('foto') is-invalid @enderror">
+            @error('foto')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="row">
-            <button class="btn btn-success" type="submit">Tambah Data Pemain</button>
-            <a href="{{url('dashboard/profile')}}">Kembali</a>
+            <button class="btn btn-success" type="submit" name="add" value="Add">Tambah Data Pemain</button>
+            <a href="{{route('profile.index')}}">Kembali</a>
         </div>
-
     </form>
 </div>
-
-
-
 @endsection
