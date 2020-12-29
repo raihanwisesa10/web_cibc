@@ -2,10 +2,17 @@
 @section('content')
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
-    <h3>Form Tambah Data Pemain</h3>
+<div class="container-fluid bg-light mb-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 style="font-weight: bold;">Form Tambah Data Pemain</h3>
+        </div>
+        <div class="col-md-6">
+            <p class="text-right"><a href="{{route('profile.index')}}">Kembali</a></p>
+        </div>
+    </div>
     <!-- Content Row -->
-    <form method="POST" action="{{route('profile.store')}}" class="col-md-6" enctype="multipart/form-data">
+    <form method="POST" action="{{route('profile.store')}}" class="col-md-12" enctype="multipart/form-data">
         @csrf
         <div class=" form-group">
             <label for="nama">Nama</label>
@@ -69,10 +76,7 @@
             <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
-        <div class="row">
-            <button class="btn btn-success" type="submit" name="add" value="Add">Tambah Data Pemain</button>
-            <a href="{{route('profile.index')}}">Kembali</a>
-        </div>
+            <button class="btn btn-success float-right mb-5" type="submit" name="add" value="Add">Tambah Data Pemain</button>
     </form>
 </div>
 @endsection
