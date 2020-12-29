@@ -35,7 +35,7 @@ class HomeController extends Controller
 
     public function player()
     {
-        return view('player');
+        return view('player_detail');
     }
 
     /**

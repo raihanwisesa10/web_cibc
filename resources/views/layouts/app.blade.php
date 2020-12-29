@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>One Page Wonder - Start Bootstrap Template</title>
+    <title>Candramawa Indonesia Basketball Club</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{url('template2/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">

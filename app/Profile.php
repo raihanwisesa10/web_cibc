@@ -14,7 +14,7 @@ class Profile extends Model
 
     public function activity()
     {
-        return $this->hasOne('activity');
+        return $this->hasOne('App\Activity', 'activities.id_act');
     }
 
     // protected $posisi = [

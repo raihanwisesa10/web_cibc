@@ -71,7 +71,7 @@
         </div>
         <div class="row">
             <button class="btn btn-success" type="submit" name="add" value="Add">Tambah Data Pemain</button>
-            <a href="{{route('profile.index')}}">Kembali</a>
+            <a href="{{route('profile.index')}}" class="btn btn-success">Kembali</a>
         </div>
     </form>
 </div>

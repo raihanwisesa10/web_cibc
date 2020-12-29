@@ -9,16 +9,20 @@ use App\Profile;
 class Activity extends Model
 {
     protected $table = "activities";
-    protected $primaryKey = "id_pemain";
-    protected $fillable = ['nama', 'point', 'assist', 'steal', 'block', 'rebound'];
+    protected $primaryKey = "id_act";
+    protected $fillable = ['point', 'assist', 'steal', 'block', 'rebound'];
 
-    public function scopeGetProfile()
+    // public function scopeGetProfile()
+    // {
+    //     global $data;
+    //     $data = DB::table('profiles')
+    //         ->join('activities', 'activities.id_pemain', '=', 'profiles.id_pemain')
+    //         ->get();
+    //     dd($data);
+    //     die();
+    // }
+    public function profiles()
     {
-        global $data;
-        $data = DB::table('profiles')
-            ->join('activities', 'activities.id_pemain', '=', 'profiles.id_pemain')
-            ->get();
-        dd($data);
-        die();
+        return $this->belongsTo('App\Profile', 'profiles.id_pemain');
     }
 }

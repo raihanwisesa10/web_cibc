@@ -21,12 +21,14 @@ class ActivityController extends Controller
 
     public function index()
     {
-        $activity = Activity::all();
-        $data = Profile::GetProfile();
+        $profile = Profile::with('activity')->get();
+
+        // $activity = Activity::all();
+        // $data = Profile::GetProfile();
         // $profiles = Profile::findOrFail($activity['id_pemain']);
         // dd($profile);
         // die();
-        return view('dashboard.activity', compact('data'));
+        return view('dashboard.activity', compact('profile'));
     }
 
     /**

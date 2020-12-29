@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($activity as $act)
+            @foreach ($profiles as $profile)
             <tr>
 
                 <td>{{$act->nama}}</td>
