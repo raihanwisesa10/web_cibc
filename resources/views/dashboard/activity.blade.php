@@ -8,11 +8,10 @@
         {{ session('status') }}
     </div>
     @endif
-
+    <a href="{{route('profile.create')}}" class="btn btn-success mb-1" method="POST">Tambah Data Pemain</a>
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
-
                 <th scope="col">Nama</th>
                 <th scope="col">Point</th>
                 <th scope="col">Assist</th>
@@ -26,7 +25,7 @@
             @foreach ($profiles as $profile)
             <tr>
 
-                <td>{{$act->nama}}</td>
+                <td>{{$profile->nama}}</td>
                 <td>{{$act->point}}</td>
                 <td>{{$act->assist}}</td>
                 <td>{{$act->steal}}</td>

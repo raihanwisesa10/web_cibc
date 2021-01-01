@@ -21,19 +21,21 @@ class ActivityController extends Controller
 
     public function index()
     {
-        $profile = Profile::with('activity')->get();
+        // $activity = Activity::all();
+        $profiles = Profile::where('id_pemain',)->get();
+        // $datas = [$activity, $profile];
 
         // $activity = Activity::all();
         // $data = Profile::GetProfile();
         // $profiles = Profile::findOrFail($activity['id_pemain']);
-        // dd($profile);
-        // die();
-        return view('dashboard.activity', compact('profile'));
+        dd($profile);
+        die();
+        return view('dashboard.activity', compact('profiles'));
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     *atas
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -59,7 +61,7 @@ class ActivityController extends Controller
         ]);
 
         Activity::create($request->all());
-        return redirect('/dashboard/activity')->with('status', 'Data Pemain Berhasil Ditambahkan!');
+        return redirect('activity')->with('status', 'Data Pemain Berhasil Ditambahkan!');
     }
 
     /**
@@ -95,7 +97,7 @@ class ActivityController extends Controller
         $activity->block = $request->get('block');
         $activity->rebound = $request->get('rebound');
         $activity->save();
-        return redirect('/dashboard/activity')->with('status', 'Data berhasil Diubah.');
+        return redirect('activity')->with('status', 'Data berhasil Diubah.');
     }
 
     public function back()
