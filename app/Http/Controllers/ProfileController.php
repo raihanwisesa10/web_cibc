@@ -163,7 +163,7 @@ class ProfileController extends Controller
      */
     public function destroy($id_pemain)
     {
-        $profiles = Profile::find($id_pemain);
+        $profiles = Profile::findOrFail($id_pemain);
         $profiles->delete();
         return redirect('profile')->with('status', 'Data berhasil Dihapus.');
     }

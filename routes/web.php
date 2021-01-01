@@ -40,7 +40,7 @@ Route::get('/players', 'HomeController@players')->name('players');
 
 Route::get('/about', 'HomeController@about')->name('about');
 
-Route::get('/player', 'HomeController@player')->name('player');
+Route::get('/player', 'HomeController@player_detail')->name('player_detail');
 
 // Route::resource('home', HomeController::class);
 

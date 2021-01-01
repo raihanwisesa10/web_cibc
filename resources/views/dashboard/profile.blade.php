@@ -10,7 +10,7 @@
         </div>
         @endif
         <a href="{{route('profile.create')}}" class="btn btn-success mb-1" method="POST">Tambah Data Pemain</a>
-        <table class=" table table-hover mt-3">
+        <table class=" table table-striped table-bordered">
             <thead>
                 <tr>
                     <th scope="col">Nama</th>
