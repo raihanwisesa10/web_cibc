@@ -28,7 +28,7 @@ class ActivityController extends Controller
         // $activity = Activity::all();
         // $data = Profile::GetProfile();
         // $profiles = Profile::findOrFail($activity['id_pemain']);
-        dd($profile);
+        dd($profiles);
         die();
         return view('dashboard.activity', compact('profiles'));
     }

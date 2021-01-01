@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col-md-8 bg-white pb-15">
+<div class="col-md-12 bg-light" style="margin-bottom: 100px;">
 
     <!--  <div class="btn-group margin-bottom20">
                               <i class="arrow-select fa fa-caret-down"></i>
@@ -18,22 +18,21 @@
                                   <option value="2017">2017</option>
                               </select>
                             </div> -->
-
-    <div class="sportsmagazine-fancy-title">
-        <h2>PLAYERS</h2>
+    <div class="sportsmagazine-fancy-title" style=" padding-top: 100px;">
+        <h2>Alexander Franklyn</h2>
     </div>
     <div class="player-detail">
         <div class="row m-0">
             <div class="col-xs-4 p-0">
-                <img src="https://img.wh.sportingpulseinternational.com/9a48509d8cf2840fb1f8288dd23a58ddS1.jpg" class="w-100">
+                <img src="https://img.wh.sportingpulseinternational.com/9a48509d8cf2840fb1f8288dd23a58ddS1.jpg"
+                    class="w-100">
             </div>
             <div class="col-xs-8 mb-10 info-player">
-                <h4><strong>Alexander Franklyn</strong></h4>
                 <!-- <p>Age : 0 Year</p>
-                                  <p>Height : 180 cm</p>
-                                  <p>Weight : 70 kg</p>
-                                  <p>Team : Satya Wacana Salatiga</p> -->
-                <ul>
+                                    <p>Height : 180 cm</p>
+                                    <p>Weight : 70 kg</p>
+                                    <p>Team : Satya Wacana Salatiga</p> -->
+                <ul style="margin-top: 30px;">
                     <li>
                         <span class="info-header">Born</span>
                         <span class="info-desc"> - </span>
@@ -58,27 +57,13 @@
             </div>
         </div>
     </div>
-    <table class="table">
-        <thead class="black white-text">
-            <tr class="border-0">
-                <th class="yellow border-0">
-                    <!-- <a href="#currentSeason" data-toggle="tab">Statistics</a> -->
-                    <span style="color: #fff">Statistics</span>
-                </th>
-                <!--  <th class="yellow border-0">
-                                    <a href="#all" data-toggle="tab">Game Logs</a>
-                                  </th> -->
-            </tr>
-        </thead>
-    </table>
     <div class="tab-content">
         <div class="tab-pane active" id="currentSeason">
-            <!-- <p class="coming-soon">Coming Soon</p> -->
             <div class="p-list">Averages</div>
-            <div class="scroll-x-cont">
-                <table class="table">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered" style="margin-bottom: 0">
                     <thead class="black white-text">
-                        <tr class="footable-header" style="font-size: 8px">
+                        <tr class="footable-header  font-20">
                             <th>Competition</th>
                             <th>Team</th>
                             <th>APG</th>
@@ -113,12 +98,13 @@
                     </tbody>
                 </table>
             </div>
-            <div class="info-static"><i>*Last update 2020-10-14 16:09:01 WIB</i></div>
+            <div class="info-static text-left"><i>*Last update 2020-10-14 16:09:01 WIB</i>
+            </div>
         </div>
         <!-- <div class="tab-pane" id="all">
                                 <p class="coming-soon">Coming Soon</p>
                               </div> -->
     </div>
-    <a href="{{ route('players') }}" class="btn btn-success"> Kembali </a>
+    <a href="{{ route('players') }}" class="btn btn-success float-right col-md-3 mt-4"> Kembali </a>
 </div>
 @endsection

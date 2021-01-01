@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container mt-3 mb-3">
     <div class="row">
         @foreach($profiles as $profile)
@@ -13,7 +12,6 @@
                     <a href="{{ route('player_detail', $profile->id_pemain) }}" class="btn btn-primary">Detail</a>
                 </div>
             </div>
-
         </div>
         @endforeach
     </div>
