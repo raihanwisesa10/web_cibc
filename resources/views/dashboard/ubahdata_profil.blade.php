@@ -4,7 +4,14 @@
 <body id="page-top">
     <!-- Begin Page Content -->
     <div class="container-fluid">
-        <h3>Form Ubah Data Profil Pemain</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <h3 style="font-weight: bold;">Form Ubah Data Pemain</h3>
+            </div>
+            <div class="col-md-6">
+                <p class="text-right"><a href="{{route('profile.index')}}" class="btn btn-secondary">Kembali</a></p>
+            </div>
+        </div>
         <!-- Content Row -->
         <form method="POST" action="{{route('profile.update', $profiles->id_pemain)}}" enctype="multipart/form-data">
             @csrf
@@ -54,10 +61,7 @@
                 <input value="{{$profiles->foto}}" type="file" class="form-control" id="foto" placeholder="Masukkan Foto Pemain" name="foto">
                 <input type="hidden" name="hidden_image" value="{{$profiles->foto}}">
             </div>
-            <div class="row">
-                <button class="btn btn-success" type="submit" name="edit" value="Edit">Ubah Data Pemain</button>
-                <a href="{{route('profile.index')}}" class="btn btn-success pl-3">Kembali</a>
-            </div>
+            <button class="btn btn-success float-right mb-5" type="submit" name="edit" value="Edit">Ubah Data Pemain</button>
         </form>
     </div>
 </body>

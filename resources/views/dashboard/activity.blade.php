@@ -8,7 +8,7 @@
         {{ session('status') }}
     </div>
     @endif
-    <a href="{{route('profile.create')}}" class="btn btn-success mb-1" method="POST">Tambah Data Pemain</a>
+    <a href="{{route('activity.create')}}" class="btn btn-success mb-1" method="POST">Tambah Data Pemain</a>
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
@@ -24,16 +24,15 @@
         <tbody>
             @foreach ($profiles as $profile)
             <tr>
-
                 <td>{{$profile->nama}}</td>
-                <td>{{$act->point}}</td>
-                <td>{{$act->assist}}</td>
-                <td>{{$act->steal}}</td>
-                <td>{{$act->block}}</td>
-                <td>{{$act->rebound}}</td>
+                <td>{{$profile->point}}</td>
+                <td>{{$profile->assist}}</td>
+                <td>{{$profile->steal}}</td>
+                <td>{{$profile->block}}</td>
+                <td>{{$profile->rebound}}</td>
                 <td>
-                    <a class="btn btn-warning" href="{{route('activity.edit', $act->id_pemain)}}">Edit</a>
-                    <form action="{{route('activity.destroy', $act->id_pemain)}}" method="POST">
+                    <a class="btn btn-warning" href="{{route('activity.edit', $profile->id_pemain)}}">Edit</a>
+                    <form action="{{route('activity.destroy', $profile->id_pemain)}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>

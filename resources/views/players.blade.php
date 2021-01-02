@@ -1,7 +1,7 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container mt-3 mb-3">
+<div class="container" style="margin-top: 80px;  margin-bottom: 80px;">
+    <h3 class="text-center">Candramawa Players</h3>
     <div class="row">
         @foreach($profiles as $profile)
         <div class="col-md-4 mb-2">
@@ -15,5 +15,6 @@
         </div>
         @endforeach
     </div>
+</div>
 </div>
 @endsection

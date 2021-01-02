@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use App\Activity;
 use App\Profile;
 
@@ -26,10 +27,12 @@ class HomeController extends Controller
         return view('about');
     }
 
-    public function player_detail()
+    public function player_detail($id_pemain)
     {
-        // $profiles = Profile::();
-        return view('player_detail');
+        $datas = Profile::join('activities', 'profiles.id_pemain', '=', 'activities.id_pemain')
+            ->where('profiles.id_pemain', '=', $id_pemain)->get();
+
+        return view('player_detail', compact('datas'));
     }
 
     /**
