@@ -1,4 +1,6 @@
 @extends('layouts.dashboard')
+
+@section('title', 'Profile Candramawa Indonesia')
 @section('content')
 <!-- Begin Page Content -->
 <div class="container-fluid">

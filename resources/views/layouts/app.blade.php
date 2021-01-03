@@ -8,7 +8,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Candramawa Indonesia Basketball Club</title>
+    <title>@yield('title')</title>
+
+    <!-- Logo title -->
+    <link rel="icon" href="{{url('img/Logo_Candramawa-removebg-preview.png')}}" type="image/icon type">
 
     <!-- Bootstrap core CSS -->
     <link href="{{url('template2/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">

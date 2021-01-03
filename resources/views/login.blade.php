@@ -1,4 +1,6 @@
 @extends('layouts.auth')
+
+@section('title', 'Login Candramawa Indonesia')
 @section('content')
 
 

@@ -1,4 +1,6 @@
 @extends('layouts.dashboard')
+
+@section('title', 'Tambah Data Profile')
 @section('content')
 
 <!-- Begin Page Content -->

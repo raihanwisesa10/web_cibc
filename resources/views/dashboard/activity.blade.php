@@ -1,4 +1,6 @@
 @extends('layouts.dashboard')
+
+@section('title', 'Activity Candramawa Indonesia')
 @section('content')
 
 <div class="container">

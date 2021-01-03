@@ -1,4 +1,6 @@
 @extends('layouts.dashboard')
+
+@section('title', 'Tambah Data Aktivitas')
 @section('content')
 
 <body id="page-top">

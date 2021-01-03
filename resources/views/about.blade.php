@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'About Candramawa Indonesia')
 @section('content')
 
 <div class="container" style="margin-top: 80px;  margin-bottom: 80px;">

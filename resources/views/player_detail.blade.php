@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Player Detail Candramawa Indonesia')
 @section('content')
 <div class="col-md-12 bg-light" style="margin-bottom: 100px;">
     <div class="sportsmagazine-fancy-title" style=" padding-top: 100px;">
@@ -13,20 +14,28 @@
             <div class="col-xs-8 mb-10 info-player">
                 <ul style="margin-top: 30px;">
                     <li>
-                        <span class="info-header">Born</span>
+                        <span class="info-header">Tanggal Lahir</span>
                         <span class="info-desc"> {{$datas[0]->tanggal_lahir}} </span>
                     </li>
                     <li>
-                        <span class="info-header">Age</span>
+                        <span class="info-header">Umur</span>
                         <span class="info-desc"> {{$datas[0]->umur}} </span>
                     </li>
                     <li>
-                        <span class="info-header">Height</span>
+                        <span class="info-header">Tinggi</span>
                         <span class="info-desc">{{$datas[0]->tinggi}}</span>
                     </li>
                     <li>
-                        <span class="info-header">Weight</span>
+                        <span class="info-header">Berat</span>
                         <span class="info-desc">{{$datas[0]->berat}} </span>
+                    </li>
+                    <li>
+                        <span class="info-header">Posisi</span>
+                        <span class="info-desc">{{$datas[0]->posisi}} </span>
+                    </li>
+                    <li>
+                        <span class="info-header">Nomor Punggung</span>
+                        <span class="info-desc">{{$datas[0]->nomor_punggung}} </span>
                     </li>
                 </ul>
             </div>

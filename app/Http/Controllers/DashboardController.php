@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Activity;
+use App\Profile;
 
 class DashboardController extends Controller
 {
@@ -14,6 +15,7 @@ class DashboardController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard.dashboard');
+        $total = Profile::count();
+        return view('dashboard.dashboard', compact('total'));
     }
 }

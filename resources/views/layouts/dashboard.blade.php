@@ -9,7 +9,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Dashboard Admin Candramawa Indonesia</title>
+  <title>@yield('title')</title>
+
+  <!-- Logo title -->
+  <link rel="icon" href="{{url('img/Logo_Candramawa-removebg-preview.png')}}" type="image/icon type">
 
   <link href="{{url('template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">

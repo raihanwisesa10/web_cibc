@@ -1,4 +1,6 @@
 @extends('layouts.auth')
+
+@section('title', 'Register Candramawa Indonesia')
 @section('content')
 
 <body class="bg-gradient-primary">

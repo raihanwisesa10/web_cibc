@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Homepage Candramwa Indonesia')
 @section('content')
 <header class="masthead text-center text-white">
     <div class="masthead-content">
