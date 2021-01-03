@@ -58,8 +58,8 @@
                 <input value="{{$profiles->nomor_punggung}}" type="text" class="form-control" id="nomor_punggung" placeholder="Masukkan Nomor Punggung Pemain" name="nomor_punggung" required>
             </div>
             <div class="form-group">
-                <label for="foto">Foto</label>
-                <img src="{{ asset('upload/profiles/'.$profiles->foto) }}" alt="Image" width="200px" height="auto" />
+                <label for="foto" style="margin-right: 40px;">Foto :</label>
+                <img src="{{ asset('upload/profiles/'.$profiles->foto) }}" alt="Image" width="200px" height="auto" style="margin-bottom: 20px;"/>
                 <input value="{{$profiles->foto}}" type="file" class="form-control" id="foto" placeholder="Masukkan Foto Pemain" name="foto">
                 <input type="hidden" name="hidden_image" value="{{$profiles->foto}}">
             </div>

@@ -32,6 +32,8 @@ class HomeController extends Controller
         $datas = Profile::join('activities', 'profiles.id_pemain', '=', 'activities.id_pemain')
             ->where('profiles.id_pemain', '=', $id_pemain)->get();
 
+        // dd($datas);
+        // die();
         return view('player_detail', compact('datas'));
     }
 

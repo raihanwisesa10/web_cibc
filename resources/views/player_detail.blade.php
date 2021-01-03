@@ -8,10 +8,10 @@
     </div>
     <div class="player-detail">
         <div class="row m-0">
-            <div class="col-xs-4 p-0">
-                <img src="{{url('upload/profiles')}}/{{$datas[0]->foto}}" class="w-100" height="200" width="200">
+            <div class="col-md-3 p-0">
+                <img src="{{url('upload/profiles')}}/{{$datas[0]->foto}}" class="w-100" style="width: 50px; height: 400px;">
             </div>
-            <div class="col-xs-8 mb-10 info-player">
+            <div class="col-md-9 mb-10 info-player">
                 <ul style="margin-top: 30px;">
                     <li>
                         <span class="info-header">Tanggal Lahir</span>
@@ -41,6 +41,7 @@
             </div>
         </div>
     </div>
+    <br>
     <div class="tab-content">
         <div class="tab-pane active" id="currentSeason">
             <div class="table-responsive">
