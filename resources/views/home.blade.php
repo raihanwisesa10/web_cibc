@@ -31,7 +31,6 @@
         </div>
     </div>
 </section>
-
 <section>
     <div class="container">
         <div class="row align-items-center">
@@ -49,7 +48,6 @@
         </div>
     </div>
 </section>
-
 <section>
     <div class="container">
         <div class="row align-items-center">

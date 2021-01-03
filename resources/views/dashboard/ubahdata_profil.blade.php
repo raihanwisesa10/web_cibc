@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <h3 style="font-weight: bold;">Form Ubah Data Pemain</h3>
+                <h3 style="font-weight: bold;">Form Ubah Data Profil Pemain</h3>
             </div>
             <div class="col-md-6">
                 <p class="text-right"><a href="{{route('profile.index')}}" class="btn btn-secondary">Kembali</a></p>

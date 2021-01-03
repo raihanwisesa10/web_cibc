@@ -22,7 +22,8 @@ class ActivityController extends Controller
     public function index()
     {
 
-
+        // $profiles = Profile::join('activities', 'profiles.id_pemain', '=', 'activities.id_pemain')
+        //     ->where('profiles.id_pemain', '=', $id_pemain)->get();
         $profiles = DB::select('SELECT profiles.id_pemain,profiles.nama, activities.point, activities.assist, activities.steal, activities.block, activities.rebound FROM profiles INNER JOIN activities ON profiles.id_pemain = activities.id_pemain');
 
         return view('dashboard.activity', compact('profiles'));
@@ -83,6 +84,7 @@ class ActivityController extends Controller
     public function edit($id_pemain)
     {
         // $activity = Activity::findOrFail($id_pemain);
+        // $activity = Activity::where('id_pemain', '=', $id_pemain)->firstOrFail();
         $activity = DB::select('SELECT profiles.id_pemain,profiles.nama, activities.point, activities.assist, activities.steal, activities.block, activities.rebound FROM profiles INNER JOIN activities ON profiles.id_pemain = activities.id_pemain where profiles.id_pemain = :id', ['id' => $id_pemain]);
 
         // dd($activity);

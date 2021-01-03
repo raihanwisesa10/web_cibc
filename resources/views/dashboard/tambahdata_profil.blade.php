@@ -5,7 +5,7 @@
 <div class="container-fluid bg-light mb-5">
     <div class="row">
         <div class="col-md-6">
-            <h3 style="font-weight: bold;">Form Tambah Data Pemain</h3>
+            <h3 style="font-weight: bold;">Form Tambah Data Profil Pemain</h3>
         </div>
         <div class="col-md-6">
             <p class="text-right"><a href="{{route('profile.index')}}" class="btn btn-secondary">Kembali</a></p>
@@ -64,7 +64,7 @@
         </div>
         <div class="form-group">
             <label for="nomor_punggung">No.Punggung</label>
-            <input type="text" class="form-control @error('nomor_punggung') is-invalid @enderror" id="nomor_punggung" name="nomor_punggung" placeholder="Masukkan No.Punggung">
+            <input type="text" class="form-control @error('nomor_punggung') is-invalid @enderror" id="nomor_punggung" name="nomor_punggung" placeholder="Masukkan Nomor Punggung">
             @error('nomor_punggung')
             <div class="invalid-feedback">{{ $message }}</div>
             @enderror
