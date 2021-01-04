@@ -21,10 +21,8 @@ class ActivityController extends Controller
 
     public function index()
     {
-
-        // $profiles = Profile::join('activities', 'profiles.id_pemain', '=', 'activities.id_pemain')
-        //     ->where('profiles.id_pemain', '=', $id_pemain)->get();
-        $profiles = DB::select('SELECT profiles.id_pemain,profiles.nama, activities.point, activities.assist, activities.steal, activities.block, activities.rebound FROM profiles INNER JOIN activities ON profiles.id_pemain = activities.id_pemain');
+        $profiles = DB::table('profiles')
+            ->join('activities', 'profiles.id_pemain', '=', 'activities.id_pemain')->get();
 
         return view('dashboard.activity', compact('profiles'));
     }
@@ -38,8 +36,7 @@ class ActivityController extends Controller
     {
         global $profiles;
         $profiles = Profile::all();
-        // dd($profiles);
-        // die();
+
         return view('dashboard.tambahdata_aktivitas', compact('profiles'));
     }
 
@@ -83,19 +80,15 @@ class ActivityController extends Controller
      */
     public function edit($id_pemain)
     {
-        // $activity = Activity::findOrFail($id_pemain);
-        // $activity = Activity::where('id_pemain', '=', $id_pemain)->firstOrFail();
-        $activity = DB::select('SELECT profiles.id_pemain,profiles.nama, activities.point, activities.assist, activities.steal, activities.block, activities.rebound FROM profiles INNER JOIN activities ON profiles.id_pemain = activities.id_pemain where profiles.id_pemain = :id', ['id' => $id_pemain]);
+        $activity = DB::table('profiles')
+            ->join('activities', 'profiles.id_pemain', '=', 'activities.id_pemain')->where('profiles.id_pemain', '=', $id_pemain)->get();
 
-        // dd($activity);
-        // die();
         return view('dashboard.ubahdata_pemain', compact('activity'));
     }
 
     public function update(Request $request, $id_pemain)
     {
 
-        // $activity = Activity::findOrFail($id_pemain);
         $activity = Activity::where('id_pemain', '=', $id_pemain)->firstOrFail();
 
         $activity->id_pemain = $request->get('id_pemain');
@@ -113,9 +106,9 @@ class ActivityController extends Controller
         return redirect('/');
     }
 
-    public function destroy($id_pemain)
+    public function destroy($id_act)
     {
-        $activity = Activity::where('id_pemain', '=', $id_pemain)->firstOrFail();
+        $activity = Activity::where('id_act', '=', $id_act)->firstOrFail();
 
         $activity->delete();
         return redirect('activity')->with('status', 'Data berhasil Dihapus.');

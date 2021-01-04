@@ -53,13 +53,7 @@
     </nav>
 
     @yield('content')
-    <!-- Footer -->
-    <!-- <footer class="py-5 bg-black">
-        <div class="container">
-            <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2020</p>
-        </div>
-    </footer> -->
-    <!-- Site footer -->
+
     <footer class="site-footer pt-4 pb-2 text-white" style="background-color: #242424;">
         <h5 class="text-center">More Information</h5>
         <br>
@@ -72,7 +66,7 @@
                 <div class="col-sm-4 col-md-4">
                     <h6>Phone</h6>
                     <i class="fa fa-phone"> : <span>+62-0811-9331-301</span></i>
-                    
+
                 </div>
                 <div class="col-sm-4 col-md-4">
                     <h6>Social Media</h6>

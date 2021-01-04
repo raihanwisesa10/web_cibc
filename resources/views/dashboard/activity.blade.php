@@ -38,7 +38,7 @@
                             <a class="btn btn-warning" href="{{route('activity.edit', $profile->id_pemain)}}">Edit</a>
                         </div>
                         <div class="col-md-6 ml-n3">
-                            <form action="{{route('profile.destroy', $profile->id_pemain)}}" method="POST">
+                            <form action="{{route('activity.destroy', $profile->id_act)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger inline-block">Delete</button>

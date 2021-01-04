@@ -69,15 +69,6 @@
           <span>Profile</span>
         </a>
       </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('home')}}">
-          <i class="fas fa-fw fa-user"></i>
-          <span>Home</span>
-        </a>
-      </li>
-
       <div class="topbar-divider d-none d-sm-block"></div>
 
       <!-- Divider -->
