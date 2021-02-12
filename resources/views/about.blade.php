@@ -15,7 +15,7 @@
                 <div class="col-lg-6">
                     <div class="p-5">
                         <h2 class="display-4 text-right">Candramawa Indonesia Basketball Club</h2>
-                        <p class="text-right">Merupkan Klub Bola Basket yang berdomisili di Kota Depok, Klub ini berdiri pada tahun 2020 dan mempunyai tim dengan katergori umur 14,16, dan 18 tahun putra dan putri</p>
+                        <p class="text-right">Klub Bola Basket yang berdomisili di Kota Depok, Klub ini berdiri pada tahun 2020 dan mempunyai tim dengan katergori umur 14,16, dan 18 tahun putra dan putri</p>
                     </div>
                 </div>
             </div>

@@ -37,3 +37,5 @@ Route::get('/player_detail/{id_pemain}', 'HomeController@player_detail')->name('
 Route::resource('activity', ActivityController::class);
 
 Route::resource('profile', ProfileController::class);
+
+Route::get('/gallery', 'HomeController@gallery')->name('gallery');

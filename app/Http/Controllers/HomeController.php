@@ -35,6 +35,11 @@ class HomeController extends Controller
         return view('player_detail', compact('datas'));
     }
 
+    public function gallery()
+    {
+        return view('gallery');
+    }
+
     /**
      * Show the application dashboard.
      *

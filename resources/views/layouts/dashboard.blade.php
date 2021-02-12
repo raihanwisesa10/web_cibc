@@ -40,7 +40,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="{{ (request()->is('dashboard*')) ? 'active' : '' }}">
         <a class="nav-link" href="{{route('dashboard')}}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -55,18 +55,20 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <li class="{{ (request()->is('activity.index*')) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="{{route('activity.index')}}">
-          <i class="fas fa-fw fa-history"></i>
-          <span>Activity</span>
+          <i class="fas fa-fw fa-history" style="color:white">
+            <p>Activity</p>
+          </i>
+
         </a>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
+      <li class="{{ (request()->is('profile.index')) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="{{route('profile.index')}}">
-          <i class="fas fa-fw fa-user"></i>
-          <span>Profile</span>
+          <i class="fas fa-fw fa-user" style="color:white"></i>
+          <span style="color:white">Profile</span>
         </a>
       </li>
       <div class="topbar-divider d-none d-sm-block"></div>

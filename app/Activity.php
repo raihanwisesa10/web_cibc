@@ -11,9 +11,4 @@ class Activity extends Model
     protected $table = "activities";
     protected $primaryKey = "id_act";
     protected $fillable = ['id_pemain', 'point', 'assist', 'steal', 'block', 'rebound'];
-
-    public function profiles()
-    {
-        return $this->belongsTo('App\Profile', 'profiles.id_pemain');
-    }
 }

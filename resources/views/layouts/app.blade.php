@@ -41,10 +41,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                    <li class="{{ (request()->is('players*')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{route('players')}}">Players</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="{{ (request()->is('gallery*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{route('gallery')}}">Gallery</a>
+                    </li>
+                    <li class="{{ (request()->is('about*')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{route('about')}}">About</a>
                     </li>
                 </ul>
